@@ -15,26 +15,6 @@ h3 {
     -webkit-text-stroke: 0.7px #f4c95d;
 }
 
-.centro, .tarjetola {
-    display: flex;
-    justify-content: center;
-}
-
-#detalle {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-weight: bolder;
-    color: #2e1f27;
-    border: 2px solid #2e1f27;
-    border-radius: 5px;
-    background-color: #f4c95d;
-    width: 100px;
-    overflow: none;
-    text-decoration: none;
-    padding-left: 5px;
-    padding-right: 5px;
-}
-
 img {
     height: 180px;
     width: 180px;
@@ -79,25 +59,35 @@ img {
     background: linear-gradient(150deg, rgb(136, 54, 2) 0%, rgb(255, 165, 66) 49%, rgb(252, 176, 69) 68%, rgb(221, 143, 35) 88%, rgb(198, 116, 0) 100%);
 }
 
+.cantidad {
+    display: flex;
+    justify-content: center;
+}
+
 .cantidades {
     display: inline-flex;
-    padding: 5px;
-    margin-bottom: 5px;
+    padding: 2px;
     text-align: center;
     align-items: center;
     justify-content: center;
 }
 
-#option {
-    align-items: center;
+.centro, .tarjetola {
+    display: flex;
     justify-content: center;
 }
 
-.unidades {
-    width: 45px;
-}
-
-.botonera {
-    display: flex;
-    align-items: center;
+#detalle {
+    margin-top: 1px;
+    margin-bottom: 1px;
+    font-weight: bolder;
+    color: #2e1f27;
+    border: 2px solid #2e1f27;
+    border-radius: 5px;
+    background-color: #f4c95d;
+    width: auto;
+    overflow: none;
+    text-decoration: none;
+    padding-left: 5px;
+    padding-right: 5px;
 }

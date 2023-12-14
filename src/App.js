@@ -15,7 +15,6 @@ import Contacto from './pages/Contacto'
 
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
-
 function App() {
 
     return (
