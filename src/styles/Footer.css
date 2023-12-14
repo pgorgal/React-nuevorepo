@@ -1,0 +1,12 @@
+.nope {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+    font: 35px bolder ;
+    border-top: 5px solid #2e1f27;
+    background-color: #EADA6F;
+    overflow: auto;
+}
