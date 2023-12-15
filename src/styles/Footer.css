@@ -4,9 +4,31 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 5px;
     font: 35px bolder ;
     border-top: 5px solid #2e1f27;
     background-color: #EADA6F;
     overflow: auto;
+}
+
+.link {
+    text-decoration: none;
+    color: #2e1f27;
+    font-size: 30px;
+}
+
+.redes {
+    display: flex;
+    align-items: center;
+    gap: 10px;   
+}
+
+.contenido {
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.footer {
+    height: 500px;
+background-color: #EADA6F important!;
 }

@@ -1,7 +1,59 @@
 .nope {
-    display: inline-flex;
+    font-family: "Lobster", cursive;
     align-items: center;
     text-align: center;
     margin-top: 20px;
-    font: 35px bolder ;
+    font: 40px bolder ;
+    border-bottom: 5px solid #2e1f27;
+}
+
+.formulario {
+    height: 290px;
+    margin-top: 20px;
+    margin-left: 50%;
+    translate: -50%;
+    padding: 20px;
+    border: 2px solid #2e1f27;
+    border-radius: 5px;
+    width: 450px;
+    background-color: #fee08a;
+}
+.fila {
+    display: flex;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: bolder;
+}
+
+.form-control {
+    position: absolute;
+    left: 150px;
+    width: 250px;
+}
+
+#comentario {
+    height: 100px;
+}
+
+#botonesContacto {
+    margin-top: 82px;
+    margin-bottom: 1px;
+    font-weight: bolder;
+    color: #2e1f27;
+    border: 2px solid #2e1f27;
+    border-radius: 5px;
+    background-color: #f4c95d;
+    width: auto;
+    overflow: none;
+    text-decoration: none;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.filaboton {
+    display: flex;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: bolder;
+    justify-content: space-around;
 }

@@ -3,9 +3,11 @@ import "../styles/NavBar.css"
 import "../styles/Header.css"
 import CartWidget from "./CartWidget"
 import { Link } from "react-router-dom"
+import SearchBar from './SearchBar'
+import products from './AsyncMock'
 
 const NavBar = () => {
-    
+
     return (
         <section className="hero is-warning">
             <nav className="navbar hero-body">
@@ -15,6 +17,7 @@ const NavBar = () => {
                             <Link to="/" className="navbar-item">Inicio</Link>
                             <Link to="Productos" className="navbar-item">Productos</Link>
                             <Link to="Contacto" className="navbar-item">Contacto</Link>
+                            <SearchBar placeholder="Ingresá el producto" data={products} />
                         </div>
                         <CartWidget class="navbar-item" />
                     </div>
