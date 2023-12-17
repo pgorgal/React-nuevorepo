@@ -20,3 +20,5 @@ span {
     color: #f4c95d;
     -webkit-text-stroke: 1.5px #2e1f27;
 }
+
+.header {display: flex;}
