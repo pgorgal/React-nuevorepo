@@ -25,7 +25,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Inicio/>} />
                     <Route path="Productos" element={<Productos/>} />
-                    <Route path="Productos/:productoId" element={<Producto/>} />
+                    <Route path="Productos/:id" element={<Producto/>} />
                     <Route path="Contacto" element={<Contacto/>} />
                     <Route path="*" element={<div className="column nope">404 - Page not found, bitch.</div> } />
                 </Routes>

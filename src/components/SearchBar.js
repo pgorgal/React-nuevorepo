@@ -1,19 +1,27 @@
 import React from "react"
 import "../styles/SearchBar.css"
+import { useState } from "react"
 
-function SearchBar({placeholder, data}) {
+
+function SearchBar({ enSubmit }) {
+
+    const [ term, setTerm ] = useState("")
+
+    function handleFormSubmit(e) {
+        e.preventDefault()
+        enSubmit(term)
+    }
+
+    function handleChange(e) {
+        setTerm(e.target.value)
+    }
 
     return (
         <div>
-        <div>
-            <input type="text" placeholder={placeholder}  className="navbar-item" id="barrabuscona"/>
-        </div>
-        <div>
-            {data.map((value, key)=>{
-                return <div>{} </div>
-            } )}
-        </div>
-        </div>
+            <form onSubmit={handleFormSubmit}>
+                <input value={term} onChange={handleChange} />
+            </form>
+        </div >
     )
 }
 

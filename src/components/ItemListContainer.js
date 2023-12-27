@@ -1,14 +1,24 @@
 import React from 'react'
 import "../styles/ItemListContainer.css"
-import products from './AsyncMock'
 import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
+//import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { getFirestore, getDocs, collection } from 'firebase/firestore'
 
-function ItemListContainer(props) {
+const ItemListContainer = () => {
 
-    const { numero } = props
+    const [productos, setProductos] = useState([])
+
+    useEffect(() => {
+        const db = getFirestore()
+        const itemsCollection = collection(db, "productos")
+        getDocs(itemsCollection).then(data => {
+            setProductos(data.docs.map(doc => ({ id:doc.id, ...doc.data() })))
+        })
+    }, [])
+
+    /* const { numero } = props
 
     const [contadores, setContadores] = useState({})
 
@@ -26,10 +36,10 @@ function ItemListContainer(props) {
             [numero]: (prevContadores[numero] || 0) + 1,
         }))
     }
-
+ */
     return (
         <div className="tarjetola">
-            {products.map((producto) => {
+            {productos.map((producto) => {
                 return (
                     <Card key={producto.id} className="column tarjetas" id="card" style={{ width: '12rem' }}>
                         <Card.Img variant="top" src={producto.img} alt={producto.descripcion} className="img" />
@@ -39,7 +49,7 @@ function ItemListContainer(props) {
                             <div className="centro">
                                 <Link to={`/Productos/${producto.id}`} id="detalle">Ver detalle</Link>
                             </div>
-                            <div className="column cantidad">
+                            {/* <div className="column cantidad">
                                 <div className="cantidades">
                                     <Button onClick={handleRestar} variant="primary">-</Button>
                                 </div>
@@ -49,7 +59,7 @@ function ItemListContainer(props) {
                                 <div className="cantidades">
                                     <Button onClick={handleSumar} variant="primary">+</Button>
                                 </div>
-                            </div>
+                            </div> */}
                             <div className="centro">
                                 <button id="detalle">Agregar al carrito</button>
                             </div>
