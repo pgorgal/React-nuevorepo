@@ -4,15 +4,15 @@ import "../styles/Header.css"
 import "../styles/SearchBar.css"
 import CartWidget from "./CartWidget"
 import { Link } from "react-router-dom"
-import SearchBar from './SearchBar'
-import searchImages from "./Api"
+//import SearchBar from './SearchBar'
+//import searchImages from "./Api"
 
 const NavBar = () => {
 
-    const handleSubmit = async (term)=>{
+    /* const handleSubmit = async (term)=>{
         const resultado = await searchImages(term)
         console.log(resultado)
-    }
+    } */
 
     return (
         <section className="hero is-warning">

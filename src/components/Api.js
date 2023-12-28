@@ -5,9 +5,11 @@ import axios from "axios"
 const searchImages = async (term) => {
 
     const response = await axios.get("https://bendita-corteza-default-rtdb.firebaseio.com/", {
-        
+        headers:{
+            Authorization: "Client-ID"
+        },
         params:{
-            query: term 
+            query: term |
         }
     })
 

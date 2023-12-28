@@ -17,12 +17,6 @@ const Producto = () => {
         })
     }, [])
 
-/* const { productoId } = useParams()
-
-const producto = products.find((producto) => producto.id === productoId)
-
-const { img, descripcion, nombre, medidas, precio, material } = producto */
-
 return (
     <div>
         <div className="column contenedor">
