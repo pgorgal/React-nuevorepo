@@ -14,9 +14,15 @@ const ItemListContainer = () => {
         const db = getFirestore()
         const itemsCollection = collection(db, "productos")
         getDocs(itemsCollection).then(data => {
-            setProductos(data.docs.map(doc => ({ id:doc.id, ...doc.data() })))
+            setProductos(data.docs.map(doc => ({ id: doc.id, ...doc.data() })))
         })
     }, [])
+
+    /* const [qAgregada, setQAgregada] = useState(0)
+
+    const handleOnAdd = (q) => {
+        setQAgregada(q)
+    } */
 
     return (
         <div className="tarjetola">

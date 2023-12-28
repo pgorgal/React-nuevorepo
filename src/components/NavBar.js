@@ -19,13 +19,13 @@ const NavBar = () => {
             <nav className="navbar hero-body">
                 <div className="container">
                     <div id="navMenu" className="navbar-menu">
-                        <div class="navbar-start">
+                        <div className="navbar-start">
                             <Link to="/" className="navbar-item">Inicio</Link>
                             <Link to="Productos" className="navbar-item">Productos</Link>
                             <Link to="Contacto" className="navbar-item">Contacto</Link>
                             {/* | */}
                         </div>
-                        <CartWidget class="navbar-item" />
+                        <CartWidget className="navbar-item" />
                     </div>
                 </div>
             </nav>
