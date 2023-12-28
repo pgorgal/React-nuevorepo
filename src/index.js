@@ -2,6 +2,7 @@ import { initializeApp } from "firebase/app";
 import React from "react"
 import ReactDOM from "react-dom/client"
 import App from "./App"
+import { getFirestore } from "firebase/firestore";
 
 const el = document.getElementById("root")
 
@@ -21,7 +22,9 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
 const root = ReactDOM.createRoot(el)
 root.render(<App/>)
+
+export const db = getFirestore(app)

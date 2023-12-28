@@ -12,6 +12,7 @@ import "bulma/css/bulma.css"
 import Inicio from './pages/Inicio'
 import Productos from './pages/Productos'
 import Contacto from './pages/Contacto'
+import Administracion from "./pages/Administracion"
 
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
@@ -27,6 +28,7 @@ function App() {
                     <Route path="Productos" element={<Productos/>} />
                     <Route path="Productos/:id" element={<Producto/>} />
                     <Route path="Contacto" element={<Contacto/>} />
+                    <Route path="Administracion" element={<Administracion/>} />
                     <Route path="*" element={<div className="column nope">404 - Page not found, bitch.</div> } />
                 </Routes>
                 <Footer />

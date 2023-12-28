@@ -4,12 +4,12 @@ import axios from "axios"
 
 const searchImages = async (term) => {
 
-    const response = await axios.get("https://bendita-corteza-default-rtdb.firebaseio.com/", {
+    const response = await axios.get("https://bendita-corteza-default-rtdb.firebaseio.com.json", {
         headers:{
-            Authorization: "Client-ID"
+            Authorization: "Client-ID AIzaSyCcI4Sp_csvecsPJEhVArpOudCpZR_CuFE"
         },
         params:{
-            query: term |
+            query: term 
         }
     })
 

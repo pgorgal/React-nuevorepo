@@ -4,8 +4,6 @@ import Card from 'react-bootstrap/Card'
 
 function Contador() {
 
-    //const { numero } = props
-
     const [contadores, setContadores] = useState(0)
 
     const handleRestar = () => {
