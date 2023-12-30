@@ -6,9 +6,13 @@ import { useState, useEffect } from 'react'
 import { getFirestore, getDocs, collection } from 'firebase/firestore'
 import Contador from './Contador'
 
-const ItemListContainer = () => {
+const ItemListContainer = (allProducts,setAllProducts) => {
 
     const [productos, setProductos] = useState([])
+
+    const onAddProducto=()=>{
+        console.log("add")
+    }
 
     useEffect(() => {
         const db = getFirestore()
@@ -38,7 +42,7 @@ const ItemListContainer = () => {
                             </div>
                             <Contador />
                             <div className="centro">
-                                <button id="detalle">Agregar al carrito</button>
+                                <button id="detalle" onClick={()=>onAddProducto()}>Agregar al carrito</button>
                             </div>
                         </Card.Body>
                     </Card>
