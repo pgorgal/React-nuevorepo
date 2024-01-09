@@ -13,31 +13,29 @@ import Inicio from './pages/Inicio'
 import Productos from './pages/Productos'
 import Contacto from './pages/Contacto'
 import Administracion from "./pages/Administracion"
+import Carrito from "./pages/Carrito"
 
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import { useState } from "react"
+import { CarroProv } from "./Context/CarritoContext"
 
 function App() {
-
-const [allProducts, setAllProducts]= useState([])
-const [total, setTotal]= useState(0)
-const [countProducts, setCountProducts]= useState(0)
 
     return (
         <BrowserRouter>
             <div id="Fondo" style={{ backgroundImage: `url(${Fondo})` }}>
                 <Header />
-                <NavBar />
-                <Routes>
-                    <Route path="/" element={<Inicio/>} />
-                    <Route path="Productos" element={<Productos/>} />
-                    allProducts={allProducts}
-                    setAllProducts={setAllProducts}
-                    <Route path="Productos/:id" element={<Producto/>} />
-                    <Route path="Contacto" element={<Contacto/>} />
-                    <Route path="Administracion" element={<Administracion/>} />
-                    <Route path="*" element={<div className="column nope">404 - Page not found, bitch.</div> } />
-                </Routes>
+                <CarroProv>
+                    <NavBar />
+                    <Routes>
+                        <Route path="/" element={<Inicio />} />
+                        <Route path="Productos" element={<Productos />} />
+                        <Route path="Productos/:id" element={<Producto />} />
+                        <Route path="Contacto" element={<Contacto />} />
+                        <Route path="Administracion" element={<Administracion />} />
+                        <Route path="Carrito" element={<Carrito />} />
+                        <Route path="*" element={<div className="column nope">404 - Page not found, bitch.</div>} />
+                    </Routes>
+                </CarroProv>
                 <Footer />
             </div>
         </BrowserRouter >

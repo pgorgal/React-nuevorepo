@@ -2,7 +2,7 @@ import Button from 'react-bootstrap/Button'
 import { useState } from 'react'
 import Card from 'react-bootstrap/Card'
 
-function Contador() {
+const Contador = ({ agregar, inicial }) => {
 
     const [contadores, setContadores] = useState(0)
 
@@ -12,10 +12,11 @@ function Contador() {
     }
 
     const handleSumar = () => {
-        setContadores(contadores  + 1)
+        setContadores(contadores + 1)
     }
 
     return (
+        <div>
         <div className="column cantidad">
             <div className="cantidades">
                 <Button onClick={handleRestar} variant="primary">-</Button>
@@ -26,8 +27,12 @@ function Contador() {
             <div className="cantidades">
                 <Button onClick={handleSumar} variant="primary">+</Button>
             </div>
+            </div>
+            <div className="cantidad">
+                <button id="detalle" onClick={() => agregar(contadores)}>Agregar al carrito</button>
+            </div>
         </div>
-    )
+        )
 }
 
 export default Contador

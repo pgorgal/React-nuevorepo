@@ -1,17 +1,24 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import "../styles/ItemListContainer.css"
 import Card from 'react-bootstrap/Card'
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { getFirestore, getDocs, collection } from 'firebase/firestore'
 import Contador from './Contador'
+import { CarritoContext } from '../Context/CarritoContext'
 
-const ItemListContainer = (allProducts,setAllProducts) => {
+const ItemListContainer = ({ id, img, descripcion, nombre, medidas, precio }) => {
+    const [cantidadAgregada, setCantidadAgregada] = useState(0)
+
+    const { agregar } = useContext(CarritoContext)
 
     const [productos, setProductos] = useState([])
 
-    const onAddProducto=()=>{
-        console.log("add")
+    const handleAgregar = (contadores) => {
+        setCantidadAgregada(contadores)
+
+        const item = { id, nombre, precio }
+        agregar(item, contadores)
     }
 
     useEffect(() => {
@@ -21,12 +28,6 @@ const ItemListContainer = (allProducts,setAllProducts) => {
             setProductos(data.docs.map(doc => ({ id: doc.id, ...doc.data() })))
         })
     }, [])
-
-    /* const [qAgregada, setQAgregada] = useState(0)
-
-    const handleOnAdd = (q) => {
-        setQAgregada(q)
-    } */
 
     return (
         <div className="tarjetola">
@@ -40,9 +41,9 @@ const ItemListContainer = (allProducts,setAllProducts) => {
                             <div className="centro">
                                 <Link to={`/Productos/${producto.id}`} id="detalle">Ver detalle</Link>
                             </div>
-                            <Contador />
-                            <div className="centro">
-                                <button id="detalle" onClick={()=>onAddProducto()}>Agregar al carrito</button>
+                            <div>
+                                <Contador inicial={1} agregar={handleAgregar} />
+                                
                             </div>
                         </Card.Body>
                     </Card>
