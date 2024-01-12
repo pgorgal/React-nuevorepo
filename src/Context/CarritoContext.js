@@ -6,11 +6,11 @@ export const CarroProv = ({ children }) => {
 
     const [carrito, setCarrito] = useState([])
 
-    const agregar = (producto, cantidad) => {
-        if (!esta(producto.id)) {
-            setCarrito(prev => [...prev, { ...producto, cantidad }])
-        } else {
-            console.error("Producto ya agregado")
+    console.log(carrito)
+
+    const agregarItem = (productoAgregado, q) => {
+        if (!esta(productoAgregado.id)) {
+            setCarrito(prev => [...prev, { ...productoAgregado, q }])
         }
     }
 
@@ -28,7 +28,7 @@ export const CarroProv = ({ children }) => {
     }
 
     return (
-        <CarritoContext.Provider value={{ carrito, agregar, quitar, vaciar }} >
+        <CarritoContext.Provider value={{ carrito, agregarItem, quitar, vaciar }} >
             {children}
         </CarritoContext.Provider>
     )

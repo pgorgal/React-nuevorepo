@@ -14,7 +14,7 @@ const Carrito = () => {
                 <Link to="Productos">Productos</Link>
             </div>
         )
-    }
+    } else 
 
     return (
         <div>

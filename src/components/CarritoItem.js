@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import { CarritoContext } from "../Context/CarritoContext"
 
-const CarritoItem = ({ nombre, precio, id, quantity }) => {
+const CarritoItem = ({ nombre, precio, id, q }) => {
 
   const { removeItem } = useContext(CarritoContext)
 
@@ -10,12 +10,12 @@ const CarritoItem = ({ nombre, precio, id, quantity }) => {
     <div className="text-white flex justify-around">
 
       <h2 >{nombre}</h2>
-      <p>Cantidad:{quantity}</p>
-      <p>Subtotal:{precio * quantity}</p>
+      <p>Cantidad:{q}</p>
+      <p>Subtotal:{precio * q}</p>
       <button onClick={() => removeItem(id)}>Eliminar</button>
 
     </div>
   )
 }
 
-export default CarritoItem;
+export default CarritoItem
