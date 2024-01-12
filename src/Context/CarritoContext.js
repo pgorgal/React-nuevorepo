@@ -1,17 +1,25 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react"
 
-export const CarritoContext = createContext({ carrito: [] })
+export const CarritoContext = createContext({ carrito: [], qTotal: 0 })
 
 export const CarroProv = ({ children }) => {
 
     const [carrito, setCarrito] = useState([])
-
+    const [qTotal, setQTotal] = useState(0)
     console.log(carrito)
 
     const agregarItem = (productoAgregado, q) => {
-        if (!esta(productoAgregado.id)) {
-            setCarrito(prev => [...prev, { ...productoAgregado, q }])
-        }
+        setCarrito(prev => {
+            const existingProductIndex = prev.findIndex(producto => producto.id === productoAgregado.id)
+    
+            if (existingProductIndex !== -1) {
+                const updatedCart = [...prev]
+                updatedCart[existingProductIndex].q += q
+                return updatedCart
+            } else {
+                return [...prev, { ...productoAgregado, q }]
+            }
+        })
     }
 
     const quitar = (itemId) => {
@@ -23,12 +31,13 @@ export const CarroProv = ({ children }) => {
         setCarrito([])
     }
 
-    const esta = (itemId) => {
-        return carrito.some(producto => producto.id === itemId)
-    }
+    useEffect(() => {
+        const total = carrito.reduce((acc, producto) => acc + producto.q, 0)
+        setQTotal(total)
+    }, [carrito])
 
     return (
-        <CarritoContext.Provider value={{ carrito, agregarItem, quitar, vaciar }} >
+        <CarritoContext.Provider value={{ carrito, agregarItem, quitar, vaciar, qTotal }} >
             {children}
         </CarritoContext.Provider>
     )

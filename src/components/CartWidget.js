@@ -10,8 +10,9 @@ const CartWidget = () => {
 
     return (
         <div>
-            <Link to={"/Carrito"}  /* style={{ display: qTotal > 0 ? "block" : "none" }} */ >
-                <IoCartOutline className="icono" /><span id="hardcode">(0){qTotal}</span>
+            <Link to={"/Carrito"}>
+                <IoCartOutline className="icono" />
+                {qTotal !== undefined ? <span id="hardcode">({qTotal})</span> : <span id="hardcode">(0)</span>}
             </Link>
         </div>
     )
