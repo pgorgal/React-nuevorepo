@@ -1,13 +1,7 @@
-.boxCarrito {
-    display: inline-flex;
-    gap: 60px;
+#boxCarrito {
     margin-left: 20px;
     margin-right: 20px;
-    align-items: start;
-    vertical-align: middle;
     margin-top: 10px;
-    justify-content: left;
-    justify-items: left;
 }
 
 #detalleCarro {
