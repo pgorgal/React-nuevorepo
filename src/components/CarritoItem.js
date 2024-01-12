@@ -11,7 +11,7 @@ const CarritoItem = ({ nombre, precio, id, q, img, descripcion }) => {
 
   return (
     <Container id="boxCarrito">
-      <Row>
+      <Row className="align-items-center">
         <Col><img src={img} alt={descripcion} className="fotito" /></Col>
         <Col><p>{nombre}</p></Col>
         <Col><p>Cantidad: {q}</p></Col>

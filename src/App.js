@@ -13,6 +13,7 @@ import Administracion from "./pages/Administracion"
 import Carrito from "./pages/Carrito"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { CarroProv } from "./Context/CarritoContext"
+//import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
 
