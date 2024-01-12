@@ -1,0 +1,28 @@
+.boxCarro {
+    font-weight: bolder;
+    margin-top: 30px;
+    font-size: 25px;
+    text-align: center;
+    padding: 20px;
+    border-top: 5px solid #2e1f27;
+    border-bottom: 5px solid #2e1f27;
+    background-color: #EADA6F;
+    overflow: auto;
+}
+
+#detalleCarro {
+    margin-top: 1px;
+    margin-bottom: 1px;
+    margin-left: 10px;
+    font-size: 25px;
+    font-weight: bolder;
+    color: #2e1f27;
+    border: 2px solid #2e1f27;
+    border-radius: 5px;
+    background-color: #f4c95d;
+    width: auto;
+    overflow: none;
+    text-decoration: none;
+    padding-left: 5px;
+    padding-right: 5px;
+}

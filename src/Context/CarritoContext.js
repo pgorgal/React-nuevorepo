@@ -6,7 +6,7 @@ export const CarroProv = ({ children }) => {
 
     const [carrito, setCarrito] = useState([])
     const [qTotal, setQTotal] = useState(0)
-    console.log(carrito)
+    const [total, setTotal] = useState(0)
 
     const agregarItem = (productoAgregado, q) => {
         setCarrito(prev => {
@@ -32,12 +32,15 @@ export const CarroProv = ({ children }) => {
     }
 
     useEffect(() => {
-        const total = carrito.reduce((acc, producto) => acc + producto.q, 0)
-        setQTotal(total)
+        const updatedTotal = carrito.reduce((acc, producto) => acc + producto.q * producto.precio, 0)
+        setTotal(updatedTotal)
+
+        const updatedQTotal = carrito.reduce((acc, producto) => acc + producto.q, 0)
+        setQTotal(updatedQTotal)
     }, [carrito])
 
     return (
-        <CarritoContext.Provider value={{ carrito, agregarItem, quitar, vaciar, qTotal }} >
+        <CarritoContext.Provider value={{ carrito, agregarItem, quitar, vaciar, qTotal, total }} >
             {children}
         </CarritoContext.Provider>
     )

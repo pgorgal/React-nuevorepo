@@ -1,18 +1,19 @@
 import { useContext } from "react"
+import "../styles/CarritoItem.css"
 import { CarritoContext } from "../Context/CarritoContext"
 
-const CarritoItem = ({ nombre, precio, id, q }) => {
+const CarritoItem = ({ nombre, precio, id, q, img, descripcion }) => {
 
-  const { removeItem } = useContext(CarritoContext)
+  const { quitar } = useContext(CarritoContext)
 
 
   return (
-    <div className="text-white flex justify-around">
-
-      <h2 >{nombre}</h2>
-      <p>Cantidad:{q}</p>
-      <p>Subtotal:{precio * q}</p>
-      <button onClick={() => removeItem(id)}>Eliminar</button>
+    <div className="boxCarrito">
+      <img src={img} alt={descripcion} className="fotito"/>
+      <p>{nombre}</p>
+      <p>Cantidad: {q}</p>
+      <p>Subtotal: {precio * q}</p>
+      <button onClick={() => quitar(id)} id="detalle">Eliminar</button>
 
     </div>
   )

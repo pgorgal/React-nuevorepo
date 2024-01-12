@@ -1,6 +1,6 @@
+import "../styles/Carrito.css" 
 import { useContext } from "react"
 import { CarritoContext } from "../Context/CarritoContext"
-//import ItemListContainer from "../components/ItemListContainer"
 import CarritoItem from "../components/CarritoItem"
 import { Link } from "react-router-dom"
 
@@ -11,17 +11,17 @@ const Carrito = () => {
         return (
             <div>
                 <h3>El carrito está vacio</h3>
-                <Link to="Productos">Productos</Link>
+                <Link to="/Productos" id="detalleCarro">Volver</Link>
             </div>
         )
     } else 
 
     return (
-        <div>
+        <div className="boxCarro">
             {carrito.map(p => <CarritoItem key={p.id}{...p} />)}
             <h3>Total: ${total}</h3>
-            <button onClick={() => vaciar()} Vaciar Carrito></button>
-            <Link to={"/checkout"}>Checkout</Link>
+            <button onClick={() => vaciar()} id="detalleCarro">Vaciar Carrito</button>
+            <Link to={"/checkout"} id="detalleCarro">Checkout</Link>
         </div>
     )
 }

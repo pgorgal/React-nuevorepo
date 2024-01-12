@@ -11,9 +11,9 @@ const ItemListContainer = ({ productos }) => {
     const { agregarItem } = useContext(CarritoContext)
     const [productosLocal, setProductosLocal] = useState([])
 
-    const handleAgregar = (q, id, nombre, precio) => {
+    const handleAgregar = (q, id, nombre, precio, img, descripcion ) => {
         setQAgregado(q);
-        const productoAgregado = { id, nombre, precio };
+        const productoAgregado = { id, nombre, precio, img, descripcion };
         agregarItem(productoAgregado, q);
     };
     useEffect(() => {
@@ -34,7 +34,7 @@ const ItemListContainer = ({ productos }) => {
     return (
         <div className="tarjetola">
             {productosLocal.map((producto) => {
-                const { id, nombre, precio } = producto
+                const { id, nombre, precio, img, descripcion } = producto
                 return (
                     <Card key={id} className="column tarjetas" id="card" style={{ width: '12rem' }}>
                         <Card.Img variant="top" src={producto.img} alt={producto.descripcion} className="img" />
@@ -45,7 +45,7 @@ const ItemListContainer = ({ productos }) => {
                                 <Link to={`/Productos/${id}`} id="detalle">Ver detalle</Link>
                             </div>
                             <div>
-                                <Contador inicial={0} agregarItem={(q) => handleAgregar(q, id, nombre, precio)} />
+                                <Contador inicial={0} agregarItem={(q) => handleAgregar(q, id, nombre, precio, img, descripcion)} />
                             </div>
                         </Card.Body>
                     </Card>

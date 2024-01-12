@@ -1,0 +1,28 @@
+.boxCarrito {
+    display: inline-flex;
+    gap: 60px;
+    margin-left: 20px;
+    margin-right: 20px;
+    align-items: start;
+}
+
+#detalleCarro {
+    margin-top: 1px;
+    margin-bottom: 1px;
+    margin-left: 10px;
+    font-weight: bolder;
+    color: #2e1f27;
+    border: 2px solid #2e1f27;
+    border-radius: 5px;
+    background-color: #f4c95d;
+    width: auto;
+    overflow: none;
+    text-decoration: none;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.fotito {
+    height: 150px;
+    width: 150px;
+}
