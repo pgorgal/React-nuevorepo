@@ -18,6 +18,8 @@ const Carrito = () => {
 
     return (
         <div className="boxCarro">
+            <p className="aviso">Las tablas se realizan a pedido y están disponibles a los 15 días de realizada la compra </p>
+            <br></br>
             {carrito.map(p => <CarritoItem key={p.id}{...p} />)}
             <h3>Total: ${total}</h3>
             <Link to={"/Productos"} id="detalleCarro">Seguir Comprando</Link>
