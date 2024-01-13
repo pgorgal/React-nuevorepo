@@ -1,4 +1,7 @@
 import { createContext, useState, useEffect } from "react"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
+
 
 export const CarritoContext = createContext({ carrito: [], qTotal: 0 })
 
@@ -20,6 +23,16 @@ export const CarroProv = ({ children }) => {
                 return [...prev, { ...productoAgregado, q }]
             }
         })
+        toast.success('Producto agregado!', {
+            position: "top-right",
+            autoClose: 1000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            })
     }
 
     const quitar = (itemId) => {

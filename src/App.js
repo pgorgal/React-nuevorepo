@@ -36,19 +36,7 @@ function App() {
                     </Routes>
                 </CarroProv>
                 <Footer />
-                <ToastContainer
-                    position="top-right"
-                    autoClose={1000}
-                    hideProgressBar={false}
-                    newestOnTop={false}
-                    closeOnClick
-                    rtl={false}
-                    pauseOnFocusLoss
-                    draggable
-                    pauseOnHover
-                    theme="colored"
-                    transition= "Zoom"
-/>
+                <ToastContainer toastStyle={{ backgroundColor: "#f4c95d", color:"#2e1f27" }}  />
             </div>
         </BrowserRouter >
     )
