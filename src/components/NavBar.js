@@ -23,7 +23,6 @@ const NavBar = () => {
                             <Link to="/" className="navbar-item">Inicio</Link>
                             <Link to="Productos" className="navbar-item">Productos</Link>
                             <Link to="Contacto" className="navbar-item">Contacto</Link>
-                            <Link to="Administracion" className="navbar-item hide">Administracion</Link>
                             {/* | */}
                         </div>
                         <CartWidget className="navbar-item" />
