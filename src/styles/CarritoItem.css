@@ -1,7 +1,10 @@
-#boxCarrito {
+.boxCarrito {
+    display: inline-flex;
+    gap: 150px;
     margin-left: 20px;
     margin-right: 20px;
-    margin-top: 10px;
+    margin-bottom: 10px;
+    align-items: center;
 }
 
 #detalleCarro {
