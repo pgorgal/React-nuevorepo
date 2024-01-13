@@ -20,6 +20,7 @@ const Carrito = () => {
         <div className="boxCarro">
             {carrito.map(p => <CarritoItem key={p.id}{...p} />)}
             <h3>Total: ${total}</h3>
+            <Link to={"/Productos"} id="detalleCarro">Seguir Comprando</Link>
             <button onClick={() => vaciar()} id="detalleCarro">Vaciar Carrito</button>
             <Link to={"/checkout"} id="detalleCarro">Checkout</Link>
         </div>

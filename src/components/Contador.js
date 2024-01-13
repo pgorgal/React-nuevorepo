@@ -1,6 +1,8 @@
 import Button from 'react-bootstrap/Button'
 import { useState } from 'react'
 import Card from 'react-bootstrap/Card'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const Contador = ({ agregarItem, inicial }) => {
 
@@ -15,6 +17,8 @@ const Contador = ({ agregarItem, inicial }) => {
     const handleSumar = () => {
         setQ(q + 1)
     }
+
+    const notify = () => toast("Se agregó el producto al carrito")
 
     return (
         <div>

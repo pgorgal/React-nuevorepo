@@ -13,6 +13,8 @@ import Administracion from "./pages/Administracion"
 import Carrito from "./pages/Carrito"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { CarroProv } from "./Context/CarritoContext"
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 function App() {
 
@@ -34,6 +36,19 @@ function App() {
                     </Routes>
                 </CarroProv>
                 <Footer />
+                <ToastContainer
+                    position="top-right"
+                    autoClose={1000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    theme="colored"
+                    transition= "Zoom"
+/>
             </div>
         </BrowserRouter >
     )

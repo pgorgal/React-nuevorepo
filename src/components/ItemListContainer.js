@@ -11,7 +11,7 @@ const ItemListContainer = ({ productos }) => {
     const { agregarItem } = useContext(CarritoContext)
     const [productosLocal, setProductosLocal] = useState([])
 
-    const handleAgregar = (q, id, nombre, precio, img, descripcion ) => {
+    const handleAgregar = (q, id, nombre, precio, img, descripcion) => {
         setQAgregado(q);
         const productoAgregado = { id, nombre, precio, img, descripcion };
         agregarItem(productoAgregado, q);
