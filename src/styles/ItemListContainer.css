@@ -92,3 +92,6 @@ img {
     padding-right: 5px;
 }
 
+#detalle:active {
+    transform: scale(0.8);
+}

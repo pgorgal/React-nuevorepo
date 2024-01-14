@@ -24,6 +24,10 @@ h3 {
     justify-content: center;
 }
 
+#volver:active {
+    transform: scale(0.8);
+}
+
 .contenedor{
     margin-top: 20px;
     display: flex;

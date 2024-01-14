@@ -50,6 +50,10 @@
     padding-right: 5px;
 }
 
+#botonesContactoOut:active {
+    transform: scale(0.8);
+}
+
 .filaboton {
     display: flex;
     margin-top: 5px;
