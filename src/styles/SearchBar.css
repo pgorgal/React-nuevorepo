@@ -2,4 +2,15 @@
     vertical-align: middle;
     border-radius: 5px;
     border: solid 2px;
+    width: 250px;
+    margin-right: 5px;
+}
+
+.field {
+    margin-right: 650px;
+}
+
+.lupa {
+    transform: scale(1.7);
+    color: #2e1f27;
 }
